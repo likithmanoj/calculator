@@ -1,0 +1,87 @@
+<section class="calculator">
+  <h1>Simple Calculator</h1>
+
+  <form action={~p"/"} method="post">
+    <input type="number" name="calc[a]" step="any" placeholder="First Number" required />
+
+    <select name="calc[op]" required>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <input type="number" name="calc[b]" step="any" placeholder="Second Number" required />
+    <button type="submit">Calculate</button>
+  </form>
+  <a href={~p"/histories"} style="color: blue; text-decoration: underline;">History</a>
+
+
+  <section class="result">
+    <%= if @result do %>
+      Result: <%= @result %>
+    <% end %>
+  </section>
+</section>
+
+<style>
+  body {
+    background: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .calculator {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 320px;
+  }
+
+  .calculator h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .calculator form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calculator input[type="number"],
+  .calculator select {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .calculator button {
+    padding: 0.75rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .calculator button:hover {
+    background-color: #4338ca;
+  }
+
+  .result {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #10b981;
+  }
+</style>

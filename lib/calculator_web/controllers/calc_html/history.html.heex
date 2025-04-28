@@ -1,0 +1,25 @@
+<section>
+<h1>History:</h1>
+  <table class="history">
+    <tbody>
+     <%= for expr <- String.split(@history || "", ";") do%>
+        <tr>
+          <td><%= expr %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+<style>
+.history {
+    margin-top: 1.5rem;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+  }
+
+  .history td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+  }
+</style>
